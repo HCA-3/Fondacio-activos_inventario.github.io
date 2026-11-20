@@ -23,6 +23,4 @@ class Sede(Trazable, Base):
     correo: Mapped[str] = mapped_column(Text, server_default="")
     color: Mapped[str] = mapped_column(Text, server_default="")
     enfoque: Mapped[str] = mapped_column(Text, server_default="")
-    campos_extra: Mapped[dict[str, Any]] = mapped_column(
-        JSONB, default=dict, server_default="{}"
-    )
+    campos_extra: Mapped[dict[str, Any]] = mapped_column(JSONB, default=dict, server_default="{}")

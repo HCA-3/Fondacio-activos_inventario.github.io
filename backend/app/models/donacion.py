@@ -60,9 +60,7 @@ class Donacion(Trazable, Base):
     estado: Mapped[str] = mapped_column(Text, default=EstadoDonacion.RECIBIDA)
     # Dirección del comprobante subido, con su huella; vacía si no tiene.
     comprobante: Mapped[str] = mapped_column(Text, server_default="")
-    campos_extra: Mapped[dict[str, Any]] = mapped_column(
-        JSONB, default=dict, server_default="{}"
-    )
+    campos_extra: Mapped[dict[str, Any]] = mapped_column(JSONB, default=dict, server_default="{}")
 
     donante: Mapped[Donante] = relationship(lazy="selectin")
     sede: Mapped[Sede] = relationship(lazy="selectin")

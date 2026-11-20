@@ -51,6 +51,4 @@ class Mantenimiento(Trazable, Base):
     repuestos: Mapped[str] = mapped_column(Text, server_default="")
     proximo: Mapped[date | None] = mapped_column(Date)
     notas: Mapped[str] = mapped_column(Text, server_default="")
-    campos_extra: Mapped[dict[str, Any]] = mapped_column(
-        JSONB, default=dict, server_default="{}"
-    )
+    campos_extra: Mapped[dict[str, Any]] = mapped_column(JSONB, default=dict, server_default="{}")
